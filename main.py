@@ -2,6 +2,7 @@ from openai.embeddings_utils import distances_from_embeddings, cosine_similarity
 import pandas as pd
 import openai
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import numpy as np
 from typing import List, Optional
@@ -9,6 +10,12 @@ from functions import create_context, answer_question
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Message(BaseModel):
     role: str
