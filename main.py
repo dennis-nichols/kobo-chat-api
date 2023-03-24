@@ -27,7 +27,7 @@ class ChatInput(BaseModel):
     max_len: Optional[int] = 1800
     size: Optional[str] = "ada"
     debug: Optional[bool] = False
-    max_tokens: Optional[int] = 150
+    max_tokens: Optional[int] = 2000
     stop_sequence: Optional[str] = None
 
 
