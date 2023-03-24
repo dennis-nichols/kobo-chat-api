@@ -81,7 +81,7 @@ def answer_question(
         response = openai.ChatCompletion.create(
             model=model,
             messages=[
-                {"role": "system", "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\n also provide links to any articles mentioned in the context. Context: {context}"},
+                {"role": "system", "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\n If answers would be best in list form, please format them as lists. Context: {context}"},
                 {"role": "user", "content": question}
             ],
             temperature=0.8,
