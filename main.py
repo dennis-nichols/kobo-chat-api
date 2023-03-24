@@ -24,7 +24,7 @@ class Message(BaseModel):
 
 class ChatInput(BaseModel):
     messages: List[Message]
-    max_len: Optional[int] = 1800
+    max_len: Optional[int] = 800
     size: Optional[str] = "ada"
     debug: Optional[bool] = False
     max_tokens: Optional[int] = 800
